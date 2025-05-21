@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/blockchain-lottery-react/static/css/main.b95e7c76.css",
+    "main.js": "/blockchain-lottery-react/static/js/main.98006787.js",
+    "static/js/453.419a5d54.chunk.js": "/blockchain-lottery-react/static/js/453.419a5d54.chunk.js",
+    "static/media/logo.png": "/blockchain-lottery-react/static/media/logo.b5fd3fe2c3d6c9146371.png",
+    "index.html": "/blockchain-lottery-react/index.html",
+    "main.b95e7c76.css.map": "/blockchain-lottery-react/static/css/main.b95e7c76.css.map",
+    "main.98006787.js.map": "/blockchain-lottery-react/static/js/main.98006787.js.map",
+    "453.419a5d54.chunk.js.map": "/blockchain-lottery-react/static/js/453.419a5d54.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b95e7c76.css",
+    "static/js/main.98006787.js"
+  ]
+}
