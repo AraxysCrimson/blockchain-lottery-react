@@ -1,0 +1,126 @@
+.faq-section {
+  padding: 3rem 1rem;
+  background: linear-gradient(135deg, #3b5998, #8b9dc3); /* gradient từ xanh dương đậm sang nhạt */
+  min-height: calc(100vh - 200px);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.faq-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #f0f4ff;
+  font-size: 2.6rem;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.faq-title:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  border-radius: 2px;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq-item {
+  background: #1f2a40; /* Xanh lam nhạt, dịu mắt */
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+
+.faq-item:hover {
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+  background: #24324f; /* Hover nhẹ hơn */
+}
+
+
+.faq-question {
+  padding: 1.5rem 2rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1f2a40; /* cùng tone với item */
+  transition: background-color 0.3s ease;
+}
+
+.faq-item.active .faq-question {
+  background-color: #24324f;
+  border-bottom: 1px solid #34425e;
+}
+
+
+.faq-question h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #f0f4ff;
+  font-weight: 600;
+}
+
+.faq-toggle {
+  font-size: 1.6rem;
+  color: #9dbbff;
+  font-weight: bold;
+}
+
+.faq-item.active .faq-toggle {
+  transform: rotate(180deg); /* dấu trừ quay ngược để tạo cảm giác toggle */
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+}
+
+
+.faq-answer.show {
+  max-height: 600px;
+  padding: 1.2rem 2rem;
+  background: #2d3c5a;
+}
+
+.faq-answer p {
+  margin: 0;
+  color: #f0f4ff;
+  line-height: 1.65;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .faq-title {
+    font-size: 2rem;
+  }
+
+  .faq-question h3 {
+    font-size: 1rem;
+  }
+
+  .faq-question, .faq-answer.show {
+    padding: 1rem 1.5rem;
+  }
+
+  .faq-toggle {
+    font-size: 1.3rem;
+  }
+}

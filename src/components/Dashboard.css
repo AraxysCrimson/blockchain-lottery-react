@@ -1,0 +1,462 @@
+/* src/components/Dashboard.css */
+.dashboard-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+@media (min-width: 768px) {
+  .dashboard {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .stats-card {
+    grid-column: span 2;
+  }
+}
+
+@media (min-width: 1200px) {
+  .dashboard {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .stats-card {
+    grid-column: span 1;
+  }
+}
+
+.stats-card,
+.action-card,
+.admin-card {
+  background: linear-gradient(145deg, #1e2a4a 0%, #121a30 100%);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: visible; /* Thay đổi từ hidden sang visible */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  height: 100%;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+}
+
+.stats-card:hover,
+.action-card:hover,
+.admin-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-header h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  background: linear-gradient(90deg, #ffffff, #a3c1ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 0.5px;
+}
+
+.card-icon {
+  font-size: 2rem;
+  opacity: 0.9;
+  background: rgba(255, 255, 255, 0.1);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.admin-icon {
+  background: rgba(255, 215, 0, 0.2);
+}
+
+.stats-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.stats-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.stats-item span:first-child {
+  color: #a3b1cc;
+  font-size: 1.1rem;
+}
+
+.highlight {
+  color: #4CAF50;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.prize-value {
+  font-size: 1.8rem;
+  color: #ffc107;
+  text-shadow: 0 0 10px rgba(255, 193, 7, 0.3);
+}
+
+.highlight-small {
+  color: #4CAF50;
+  font-weight: 600;
+}
+
+.status {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.status.active {
+  background-color: rgba(76, 175, 80, 0.2);
+  color: #4CAF50;
+  border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.status.inactive {
+  background-color: rgba(244, 67, 54, 0.1);
+  color: #f44336;
+  border: 1px solid rgba(244, 67, 54, 0.2);
+}
+
+/* Form container để thay thế form */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  z-index: 20; /* Tăng z-index để đảm bảo form hiển thị trên các lớp khác */
+}
+
+.form-group {
+  margin-bottom: 24px;
+  width: 100%;
+  position: relative;
+  z-index: 20;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 10px;
+  color: #a3b1cc;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s;
+  width: 100%;
+  z-index: 20;
+}
+
+.input-field {
+  width: 100%;
+  padding: 16px 18px;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  font-size: 1.2rem;
+  transition: all 0.3s;
+  cursor: text;
+  position: relative;
+  z-index: 20;
+  -webkit-appearance: none; /* Loại bỏ giao diện mặc định trên iOS */
+  appearance: none;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #3f51b5;
+  box-shadow: 0 0 0 3px rgba(63, 81, 181, 0.3);
+}
+
+.input-field::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.currency-symbol {
+  position: absolute;
+  right: 18px;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 500;
+  font-size: 1.1rem;
+  pointer-events: none;
+  z-index: 21;
+}
+
+.input-error-border .input-field {
+  border-color: #ff5252;
+}
+
+.input-error {
+  color: #ff5252;
+  font-size: 0.95rem;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 82, 82, 0.1);
+  padding: 8px 12px;
+  border-radius: 8px;
+  border-left: 3px solid #ff5252;
+  z-index: 20;
+}
+
+.error-icon {
+  margin-right: 8px;
+  font-size: 1.1rem;
+}
+
+.btn {
+  width: 100%;
+  padding: 18px;
+  border-radius: 12px;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  margin-top: 10px;
+  z-index: 20; /* Tăng z-index để đảm bảo nút hiển thị trên các lớp khác */
+}
+
+/* Loại bỏ hiệu ứng ::before có thể gây cản trở */
+.btn::before {
+  display: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #3f51b5 0%, #2196f3 100%);
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, #303f9f 0%, #1976d2 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(33, 150, 243, 0.4);
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, #f44336 0%, #e91e63 100%);
+  color: white;
+}
+
+.btn-danger:hover:not(:disabled) {
+  background: linear-gradient(135deg, #d32f2f 0%, #c2185b 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(244, 67, 54, 0.4);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed !important;
+}
+
+.btn-icon {
+  margin-left: 10px;
+  font-size: 1.3rem;
+}
+
+.min-entry {
+  text-align: center;
+  margin-top: 16px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1rem;
+}
+
+.spinner {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.admin-status {
+  background: rgba(255, 215, 0, 0.1);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.admin-badge {
+  background: linear-gradient(135deg, #FFC107 0%, #FF9800 100%);
+  color: #000;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  box-shadow: 0 3px 10px rgba(255, 193, 7, 0.3);
+}
+
+.admin-status p {
+  margin: 0;
+  color: #ffc107;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.no-players-warning {
+  margin-top: 20px;
+  color: #ff9800;
+  font-size: 1rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 152, 0, 0.1);
+  padding: 12px;
+  border-radius: 8px;
+  border-left: 3px solid #ff9800;
+}
+
+.warning-icon {
+  margin-right: 8px;
+  font-size: 1.1rem;
+}
+
+/* Loại bỏ hiệu ứng ánh sáng có thể gây cản trở */
+.stats-card::after,
+.action-card::after,
+.admin-card::after {
+  display: none;
+}
+
+/* Thêm phần tips và thông tin */
+.action-tips,
+.admin-info {
+  margin-top: 24px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 10;
+}
+
+.tip-item,
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.tip-item:last-child,
+.info-item:last-child {
+  margin-bottom: 0;
+}
+
+.tip-icon,
+.info-icon {
+  margin-right: 10px;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.tip-item span:last-child,
+.info-item span:last-child {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Loại bỏ hiệu ứng pulse có thể gây cản trở */
+.btn-primary:hover:not(:disabled),
+.btn-danger:hover:not(:disabled) {
+  animation: none;
+}
+
+/* Tăng kích thước của nút để dễ nhấn hơn */
+.btn-primary, .btn-danger {
+  padding: 20px 30px;
+  font-size: 1.3rem;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  touch-action: manipulation; /* Cải thiện khả năng phản hồi trên thiết bị cảm ứng */
+}
+
+/* Hiệu ứng khi nhấn nút */
+.btn:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Thêm class đặc biệt cho nút mua vé và nút admin */
+.buy-ticket-btn, .admin-btn {
+  position: relative;
+  z-index: 100;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent; /* Loại bỏ highlight khi tap trên mobile */
+}
+
+/* Đảm bảo các phần tử có thể tương tác */
+input, button {
+  pointer-events: auto !important;
+}
+
+/* Thêm padding cho input trên mobile */
+@media (max-width: 768px) {
+  .input-field {
+    padding: 18px 20px;
+    font-size: 16px; /* Đảm bảo không bị zoom trên iOS */
+  }
+  
+  .btn-primary, .btn-danger {
+    padding: 20px;
+    font-size: 18px;
+  }
+}

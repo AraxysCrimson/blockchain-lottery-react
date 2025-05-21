@@ -1,0 +1,344 @@
+/* Phần khung tổng Players Section */
+.players-section {
+  background: linear-gradient(145deg, #4158d0 0%, #3243a8 100%);
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: visible;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  margin-top: 30px;
+  grid-column: 1 / -1;
+}
+
+.players-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.players-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Tiêu đề danh sách */
+.players-section h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 25px 0;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.players-section h3::before {
+  content: '👥';
+  margin-right: 15px;
+  background: rgba(255, 255, 255, 0.15);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  font-size: 1.3rem;
+}
+
+/* Phần bảng container */
+.players-table-container {
+  overflow-x: auto;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  position: relative;
+  z-index: 1;
+}
+
+/* Phần bảng */
+.players-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+  background-color: transparent !important;
+}
+
+/* Header bảng - Màu xanh lam và tím */
+.players-table thead {
+  background: linear-gradient(90deg, #4158d0, #6b72e1) !important;
+}
+
+.players-table thead tr {
+  background: linear-gradient(90deg, #4158d0, #6b72e1) !important;
+}
+
+.players-table th {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.3rem;
+  text-align: left;
+  padding: 16px 20px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  background-color: transparent !important;
+}
+
+/* Các dòng dữ liệu */
+.players-table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  font-size: 1.15rem;
+  background-color: transparent !important;
+}
+
+.players-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Nền các dòng bảng - Màu xanh lam và tím */
+.players-table tbody tr {
+  transition: all 0.3s ease;
+  background: linear-gradient(90deg, rgba(65, 88, 208, 0.2), rgba(107, 114, 225, 0.2)) !important;
+}
+
+.players-table tbody tr:nth-child(odd) {
+  background: linear-gradient(90deg, rgba(65, 88, 208, 0.3), rgba(107, 114, 225, 0.3)) !important;
+}
+
+.players-table tbody tr:hover {
+  background: linear-gradient(90deg, rgba(65, 88, 208, 0.4), rgba(107, 114, 225, 0.4)) !important;
+}
+
+/* Dòng current-user */
+.players-table tbody tr.current-user {
+  background: linear-gradient(90deg, rgba(0,212,255,0.3), rgba(65,88,208,0.5)) !important;
+}
+
+.players-table tbody tr.current-user:hover {
+  background: linear-gradient(90deg, rgba(0,212,255,0.4), rgba(65,88,208,0.6)) !important;
+}
+
+/* Badge Người chơi - Bạn */
+.user-badge, .player-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.user-badge {
+  background-color: rgba(76, 175, 80, 0.4);
+  color: #ffffff;
+  border: 1px solid rgba(76, 175, 80, 0.6);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.user-badge::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    left: 100%;
+  }
+}
+
+.player-badge {
+  background-color: rgba(33, 150, 243, 0.3);
+  color: #ffffff;
+  border: 1px solid rgba(33, 150, 243, 0.5);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Pagination */
+.pagination-container {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.pagination-info {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.15rem;
+  margin-bottom: 15px;
+  text-align: center;
+  background: rgba(65, 88, 208, 0.3);
+  padding: 10px 20px;
+  border-radius: 30px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.pagination-info .highlight {
+  color: #8aff8a;
+  font-weight: bold;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pagination-button {
+  background: rgba(65, 88, 208, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+.pagination-button:hover:not(:disabled) {
+  background: rgba(78, 99, 215, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.pagination-button.active {
+  background: #4CAF50;
+  border-color: rgba(76, 175, 80, 0.7);
+  font-weight: 700;
+  box-shadow: 0 0 15px rgba(76, 175, 80, 0.5);
+  position: relative;
+}
+
+.pagination-button.active::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  animation: pulse 2s infinite;
+  box-sizing: border-box;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.5; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.pagination-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Empty state */
+.no-players-message {
+  text-align: center;
+  padding: 40px 20px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 2rem;
+  background: rgba(65, 88, 208, 0.25);
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.no-players-icon {
+  font-size: 4.5rem;
+  margin-bottom: 20px;
+  opacity: 0.8;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Scrollbar chỉnh - màu xanh lam và tím */
+.players-table-container::-webkit-scrollbar {
+  height: 8px;
+}
+.players-table-container::-webkit-scrollbar-track {
+  background: linear-gradient(90deg, rgba(65, 88, 208, 0.1), rgba(107, 114, 225, 0.1));
+  border-radius: 4px;
+}
+.players-table-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, rgba(65, 88, 208, 0.3), rgba(107, 114, 225, 0.3));
+  border-radius: 4px;
+}
+.players-table-container::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(90deg, rgba(65, 88, 208, 0.4), rgba(107, 114, 225, 0.4));
+}
+
+/* Màu cho cột STT - xanh lam sáng */
+.players-table td:first-child {
+  font-weight: 700;
+  color: #00b0ff !important;
+}
+
+/* Bổ sung thêm các quy tắc để đảm bảo màu nền */
+.players-table tr {
+  background-color: transparent;
+}
+
+/* Thêm quy tắc để khắc phục vấn đề màu nền trắng */
+table.players-table {
+  background-color: transparent !important;
+}
+
+/* Override bất kỳ style nào có thể gây ra màu trắng */
+.players-table * {
+  background-color: inherit;
+}
+
+/* Đảm bảo màu nền cho tbody */
+.players-table tbody {
+  background-color: transparent !important;
+}
+
+/* Thêm style để khắc phục vấn đề với backdrop-filter */
+.players-table-container {
+  background: rgba(255, 255, 255, 0.05) !important;
+}

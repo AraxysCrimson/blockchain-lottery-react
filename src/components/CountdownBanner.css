@@ -1,0 +1,124 @@
+/* src/components/CountdownBanner.css */
+
+.countdown-banner {
+    background: linear-gradient(135deg, #1a5fb4 0%, #2d3a8c 100%);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .countdown-banner::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+    opacity: 0.6;
+    pointer-events: none;
+  }
+  
+  .countdown-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+    position: relative;
+  }
+  
+  @media (min-width: 768px) {
+    .countdown-info {
+      flex-direction: row;
+    }
+  }
+  
+  .countdown-text {
+    text-align: center;
+    color: white;
+    margin-bottom: 15px;
+  }
+  
+  @media (min-width: 768px) {
+    .countdown-text {
+      text-align: left;
+      margin-bottom: 0;
+    }
+  }
+  
+  .title {
+    font-size: 3rem; /* Tăng kích thước chữ lên 2.8rem */
+    font-weight: 700;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+  }
+  
+  .draw-time {
+    font-size: 2.1rem; /* Tăng kích thước chữ lên 2.1rem */
+    opacity: 0.9;
+    margin: 5px 0;
+  }
+  
+  .catchphrase {
+    font-style: italic;
+    font-weight: 500;
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+    font-size: 2.1rem; /* Tăng kích thước chữ lên 2.1rem */
+    color: #f0f0f0;
+    border-left: 3px solid #4CAF50;
+    animation: glow 2s infinite alternate;
+    max-width: 400px;
+  }
+  
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+    }
+    to {
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+    }
+  }
+  
+  .countdown-timer {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 12px 20px;
+    color: white;
+    font-family: 'Roboto Mono', monospace;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .timer-text {
+    font-size: 5.8rem; /* Tăng kích thước chữ lên 5.8rem */
+    font-weight: 700;
+  }
+  
+  .icon-wrapper {
+    margin-right: 12px;
+    font-size: 1.9rem; /* Tăng kích thước biểu tượng lên 1.9rem */
+  }
+  
+  .highlight {
+    color: #4CAF50;
+    font-weight: bold;
+  }
+  
+  .time-highlight {
+    color: #4CAF50;
+    font-weight: bold;
+    font-size: inherit; /* Kế thừa kích thước chữ từ phần tử cha */
+  }
+  

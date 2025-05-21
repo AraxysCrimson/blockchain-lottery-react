@@ -1,0 +1,327 @@
+/* src/components/InfoSection.css */
+
+.info-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    background: linear-gradient(145deg, #ff4e50, #f9d423); /* đỏ cam rực */
+    padding: 30px; /* nên thêm padding nếu muốn đẹp hơn */
+    border-radius: 16px; /* bo góc nhẹ nền ngoài */
+  }
+  
+  /* Thẻ card chung */
+  .card {
+    background: linear-gradient(145deg, rgba(65, 88, 208, 0.9) 0%, rgba(50, 67, 168, 0.9) 100%);
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2), 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.75rem;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25), 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Header của card */
+  .card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding-bottom: 1rem;
+  }
+  
+  .card-header h3 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: -0.02em;
+  }
+  
+  /* Icon wrapper */
+  .icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin-right: 1rem;
+    border-radius: 12px;
+    font-size: 1.4rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Các icon */
+  .trophy-icon {
+    background: linear-gradient(135deg, #ffe29f 0%, #ffa99f 48%, #ff719a 100%);
+    color: #ffffff;
+  }
+  
+  .user-icon {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: #ffffff;
+  }
+  
+  /* Card đặc biệt */
+  .winner-card {
+    background: linear-gradient(135deg, rgba(65, 88, 208, 0.9) 0%, rgba(78, 99, 215, 0.9) 100%);
+    border-left: 5px solid #ff719a;
+  }
+  
+  .contract-info {
+    background: linear-gradient(135deg, rgba(65, 88, 208, 0.9) 0%, rgba(78, 99, 215, 0.9) 100%);
+    border-left: 5px solid #2575fc;
+  }
+  
+  /* Nội dung trong info section */
+  .info-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .winner-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  /* Dòng thông tin */
+  .info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.15);
+  }
+  
+  .info-row:last-child {
+    border-bottom: none;
+  }
+  
+  /* Nhãn và giá trị */
+  .info-label {
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+    margin-right: 10px;
+  }
+  
+  .info-value {
+    font-family: 'Roboto Mono', monospace;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.4rem 0.75rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    flex-grow: 1;
+  }
+  
+  /* Hiển thị địa chỉ đầy đủ */
+  .address-value {
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  .full-address-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+  }
+  
+  .full-address {
+    display: block;
+    width: 100%;
+    padding: 0.4rem 0.75rem;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+  }
+  
+  .full-address::-webkit-scrollbar {
+    height: 4px;
+  }
+  
+  .full-address::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .full-address::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+  }
+  
+  .copy-button {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    border-radius: 4px;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 1rem;
+    color: #ffffff;
+  }
+  
+  .copy-button:hover {
+    background: rgba(255, 255, 255, 0.25);
+  }
+  
+  .copy-button:active {
+    transform: translateY(-50%) scale(0.95);
+  }
+  
+  /* Các phần highlight */
+  .highlight {
+    color: #8aff8a;
+    font-weight: 700;
+    background: linear-gradient(to right, #8aff8a, #4caf50);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .win-amount {
+    color: #8aff8a;
+    font-weight: 700;
+    font-size: 1.15rem;
+    background: linear-gradient(to right, #38a169, #68d391);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Badge */
+  .badge {
+    padding: 0.35rem 1rem;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* Các loại badge */
+  .manager-badge {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: white;
+  }
+  
+  .user-badge {
+    background: linear-gradient(135deg, #8e9aaf 0%, #cbc0d3 100%);
+    color: white;
+  }
+  
+  /* Message container */
+  .message-container {
+    display: flex;
+    align-items: center;
+    padding: 1.25rem;
+    border-radius: 12px;
+    margin-top: 1rem;
+    animation: fadeIn 0.4s ease-in-out;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+  }
+  
+  /* Success và error */
+  .success {
+    background: linear-gradient(135deg, rgba(56, 161, 105, 0.9), rgba(72, 187, 120, 0.9));
+    border-left: 5px solid #38a169;
+  }
+  
+  .error {
+    background: linear-gradient(135deg, rgba(229, 62, 62, 0.9), rgba(252, 129, 129, 0.9));
+    border-left: 5px solid #e53e3e;
+  }
+  
+  /* Icon trong message */
+  .message-icon {
+    margin-right: 1rem;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Icon success / error */
+  .success-icon {
+    background: linear-gradient(135deg, #9ae6b4 0%, #38a169 100%);
+    color: white;
+  }
+  
+  .error-icon {
+    background: linear-gradient(135deg, #feb2b2 0%, #e53e3e 100%);
+    color: white;
+  }
+  
+  /* Text trong message */
+  .message-text {
+    margin: 0;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+  
+  /* Animation fadeIn */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive chỉnh */
+  @media (max-width: 768px) {
+    .info-row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+  
+    .info-value {
+      width: 100%;
+    }
+  
+    .info-label {
+      margin-right: 0;
+    }
+  
+    .card {
+      padding: 1.25rem;
+    }
+  
+    .card-header h3 {
+      font-size: 1.2rem;
+    }
+  }
+  
