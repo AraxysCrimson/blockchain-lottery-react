@@ -76,7 +76,7 @@ function Footer() {
         </div>
         
         <div className="footer-bottom">
-          <p>© {currentYear} Xổ Số Blockchain - Được xây dựng trên nền tảng Ethereum - Bài Tập lớn môn Chuyên đề - Nhóm 3 Duy, Hiếu(bú)(liếm)(gây chia rẽ nhóm)(không có tinh thần làm việc nhóm), Sâm, Vĩnh</p>
+          <p>© {currentYear} Xổ Số Blockchain - Được xây dựng trên nền tảng Ethereum - Bài Tập lớn môn Chuyên đề - Nhóm 3 Duy, Hiếu, Sâm, Vĩnh</p>
         </div>
       </div>
     </footer>
